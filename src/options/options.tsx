@@ -10,29 +10,9 @@ import OptionsEditor from "src/components/optionsEditor"
 
 const Footer = () => (
     <div className="wcg-flex wcg-flex-col wcg-items-center wcg-p-4" >
-        <p style={{ whiteSpace: "pre-line" }} className="wcg-m-0 wcg-p-1 wcg-text-center wcg-text-lg">
-            {getTranslation(localizationKeys.UI.supportMe)}
-        </p>
-        <div className="wcg-flex wcg-flex-row wcg-items-center wcg-gap-4">
-            <a className="wcg-p-4" href="https://www.buymeacoffee.com/anzorq?utm_source=webchatgpt&utm_medium=options_page" target="_blank" rel="noopener noreferrer">
-                <img src="https://img.buymeacoffee.com/button-api/?text=Support this project&slug=anzorq&button_colour=FFDD00&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=ffffff" alt="Buy Me A Coffee" />
-            </a>
-            <a className="wcg-p-4" href="https://chrome.google.com/webstore/detail/webchatgpt-chatgpt-with-i/lpfemeioodjbpieminkklglpmhlngfcn/reviews" target="_blank" rel="noopener noreferrer">
-                <img src="../leave_review.png" alt="Review on Chrome Web Store" className="wcg-h-[4.25em] wcg-rounded-lg" />
-            </a>
-        </div>
+
     </div>
 )
-
-// const SocialCard = ({ icon, text, url }: { icon: JSX.Element, text: string, url: string }) => (
-//     <a href={url} target="_blank" rel="noopener noreferrer">
-//         <div className="wcg-btn-ghost wcg-btn wcg-flex wcg-h-28 wcg-w-36 wcg-flex-col wcg-rounded-xl wcg-p-2">
-//             {icon}
-//             <p className="wcg-p-2 wcg-normal-case wcg-text-current wcg-no-underline">{text}</p>
-//         </div>
-//     </a>
-// )
-
 
 export default function OptionsPage() {
 
