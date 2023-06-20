@@ -1,9 +1,9 @@
 {
   "appName": {
-    "message": "WebChatGPT: ChatGPT with internet access"
+    "message": "WebChatGPT-Clean"
   },
   "appDesc": {
-    "message": "Augment your ChatGPT prompts with relevant results from the web."
+    "message": "ChatGPT with web results."
   },
   "toggleWebAccess": {
     "message": "Toggle Web Access"
