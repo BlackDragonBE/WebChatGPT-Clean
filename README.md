@@ -38,7 +38,7 @@ This browser extension adds web access capability to [ChatGPT](https://chat.open
 
 ## Build from source
 
-1. `git clone https://github.com/qunash/chatgpt-advanced.git`
+1. `git clone https://github.com/BlackDragonBE/WebChatGPT-Clean.git`
 2. `npm install`
 3. `npm run build-prod`
 4. Grab your zip extension from `build/` folder

@@ -1,7 +1,7 @@
 {
   "private": true,
-  "name": "webchatgpt",
-  "version": "3.3.1",
+  "name": "webchatgpt-clean",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "build-dev": "node build.mjs",
