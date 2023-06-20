@@ -1,6 +1,6 @@
 {
   "appName": {
-    "message": "WebChatGPT: ChatGPT с доступом в интернет"
+    "message": "WebChatGPT-Clean: ChatGPT с доступом в интернет"
   },
   "appDesc": {
     "message": "Дополните запросы к ChatGPT подходящими результатами из сети Интернет."
