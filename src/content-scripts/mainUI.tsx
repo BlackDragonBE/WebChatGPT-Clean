@@ -59,9 +59,9 @@ async function processQuery(query: string, userConfig: UserConfig) {
 
 /**
  * Submits a query by processing it with the user's configuration and updating the textarea.
- * @param query - The query to be processed.
+ * @param user_query - The query to be processed.
  */
-async function handleSubmit(query: string) {
+async function handleSubmit(user_query: string) {
   console.log('WebChatGPT: handleSubmit');
 
   // Check if textarea exists before continuing
@@ -70,15 +70,18 @@ async function handleSubmit(query: string) {
   // Get the user's configuration
   const userConfig = await getUserConfig();
 
-  // Check if web access is enabled in the user's configuration before continuing
-  if (!userConfig.webAccess) return;
+  // Check if web access is enabled in the user's configuration before continuing, else just submit their text
+  if (!userConfig.webAccess){
+    clickSubmitButton();
+    return;
+  }
 
   try {
     // Process the query with the user's configuration
-    const results = await processQuery(query, userConfig);
+    const results = await processQuery(user_query, userConfig);
 
     // Compile the processed results and original query into a prompt string
-    const compiledPrompt = await compilePrompt(results, query);
+    const compiledPrompt = await compilePrompt(results, user_query);
 
     // Update the textarea with the prompt string
     textarea.value = compiledPrompt;
@@ -95,6 +98,12 @@ async function handleSubmit(query: string) {
 }
 
 async function onSubmit(event: MouseEvent | KeyboardEvent) {
+  //   // Get the user's configuration
+  //   const userConfig = await getUserConfig();
+
+  //   // Check if web access is enabled in the user's configuration before continuing
+  //   if (!userConfig.webAccess) return;
+
   if (!textarea) return;
 
   const isKeyEvent = event instanceof KeyboardEvent;
@@ -102,11 +111,7 @@ async function onSubmit(event: MouseEvent | KeyboardEvent) {
 
   if (isKeyEvent && event.key === 'Enter' && event.isComposing) return;
 
-  if (
-    !isProcessing &&
-    event.type === 'click'
-      || (isKeyEvent && event.key === 'Enter')
-  ) {
+  if ((!isProcessing && event.type === 'click') || (isKeyEvent && event.key === 'Enter')) {
     console.info('WebChatGPT: onSubmit');
     const user_query = textarea?.value.trim();
 
@@ -123,7 +128,7 @@ async function onSubmit(event: MouseEvent | KeyboardEvent) {
     isProcessing = true;
     await handleSubmit(user_query);
     isProcessing = false;
-    
+
     //Trigger event
     textarea.dispatchEvent(new Event('input', { bubbles: true }));
   }

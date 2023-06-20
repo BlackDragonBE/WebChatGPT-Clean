@@ -1,7 +1,6 @@
 import cheerio from 'cheerio'
 import Browser from 'webextension-polyfill'
 
-
 const BASE_URL = 'https://sg.search.yahoo.com/search'
 
 export interface SearchRequest {
@@ -48,7 +47,7 @@ function extractRealUrl(url: string): string {
     return url
 }
 
-function htmlToSearchResults(html: string, numResults: number): SearchResult[] {
+async function htmlToSearchResults(html: string, numResults: number): Promise<SearchResult[]> {
     const $ = cheerio.load(html)
     const results: SearchResult[] = []
 
@@ -68,31 +67,49 @@ function htmlToSearchResults(html: string, numResults: number): SearchResult[] {
         })
     }
 
-    $('.algo-sr:not([class*="ad"])')
-        .slice(0, numResults)
-        .each((_, el) => {
-            const element = $(el)
-            const titleElement = element.find('h3.title a')
+    const searchResults = $('.algo-sr:not([class*="ad"])').slice(0, numResults)
+    for (let i = 0; i < searchResults.length; i++) {
+        const element = $(searchResults[i])
+        const titleElement = element.find('h3.title a')
 
-            results.push({
-                title: titleElement.attr('aria-label') ?? '',
-                body: element.find('.compText').text().trim(),
-                url: extractRealUrl(titleElement.attr('href') ?? ''),
-            })
+        // console.log(extractRealUrl(titleElement.attr('href') ?? ''));
+        var real_url = extractRealUrl(titleElement.attr('href') ?? '')
+        // const text = await getPageContent(real_url);
+        // console.log(text);
+        results.push({
+            title: titleElement.attr('aria-label') ?? '',
+            body: element.find('.compText').text().trim(),
+            url: real_url,
         })
+    }
 
     return results
 }
 
-export async function webSearch(search: SearchRequest, numResults: number): Promise<SearchResult[]> {
+async function getPageContent(url: string): Promise<string> {
+    try {
+        const res = await fetch(url);
+        return await res.text();
+    } catch (error) {
+        console.error(error);
+        throw new Error("Failed to fetch page content");
+    }
+}
+
+export async function webSearch(search_request: SearchRequest, numResults: number): Promise<SearchResult[]> {
+    // const searchResults = await search(search_request.query, {
+    //     safeSearch: SafeSearchType.STRICT
+    //   });
+    // console.log(searchResults)
+
     const response: SearchResponse = await Browser.runtime.sendMessage({
         type: "get_search_results",
-        search
+        search: search_request
     })
 
     let results: SearchResult[]
     if (response.url.startsWith(BASE_URL)) {
-        results = htmlToSearchResults(response.html, numResults)
+        results = await htmlToSearchResults(response.html, numResults)
     } else {
         const result = await Browser.runtime.sendMessage({
             type: "get_webpage_text",
