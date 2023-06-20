@@ -55,6 +55,12 @@ export async function getWebpageTitleAndText(url: string, html_str = ''): Promis
     return { title: parsed.title, body: text, url }
 }
 
+/**
+ * Extracts text from a given URL using the browser runtime.
+ *
+ * @param {string} url - The URL to extract text from.
+ * @return {Promise<SearchResult[]>} A Promise that resolves to an array of SearchResult objects representing the extracted text.
+ */
 export async function apiExtractText(url: string): Promise<SearchResult[]> {
     const response = await Browser.runtime.sendMessage({
         type: "get_webpage_text",

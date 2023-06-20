@@ -36,16 +36,10 @@ export const setLocaleLanguage = (newLanguage: string) => {
     language = newLanguage === 'auto' ? getSystemLanguage() : newLanguage
 }
 
-export const getTranslation = (key: string, lang?: string) => {
-    if (lang) {
-        return localizedStrings[key][lang]
-    }
-    if (language in localizedStrings[key]) {
-        return localizedStrings[key][language]
-    }
-    return localizedStrings[key][DEFAULT_LANGUAGE]
+export const getTranslation = (key: string, lang: string = DEFAULT_LANGUAGE) => {
+    const translation = localizedStrings[key][lang] || localizedStrings[key][DEFAULT_LANGUAGE]
+    return translation
 }
-
 
 export const localizationKeys = {
     defaultPrompt: 'default_prompt',

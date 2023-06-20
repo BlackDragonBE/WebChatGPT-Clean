@@ -17,6 +17,7 @@ export function getWebChatGPTToolbar(): HTMLElement {
 export function getSubmitButton(): HTMLButtonElement {
     const textarea = getTextArea()
     if (!textarea) {
+        console.log("textarea not found ")
         return null
     }
     return textarea.parentNode.querySelector("button")

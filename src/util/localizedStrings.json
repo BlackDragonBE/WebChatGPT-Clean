@@ -1,6 +1,6 @@
 {
   "default_prompt": {
-    "en": "Web search results:\n\n{web_results}\nCurrent date: {current_date}\n\nInstructions: Using the provided web search results, write a comprehensive reply to the given query. Make sure to cite results using [[number](URL)] notation after the reference. If the provided search results refer to multiple subjects with the same name, write separate answers for each subject.\nQuery: {query}"
+    "en": "Web search results:\n\n{web_results}\nToday's date: {current_date}\n\nInstructions: Using the provided web search results, write a comprehensive reply to the given query in the same language as the query. Cite all results with the url where the info was found. If search results refer to multiple subjects with same name, write separate answers for each subject.\nQuery: {query}"
   },
   "language": {
     "en": "Language",
@@ -117,7 +117,7 @@
     "he": "הגבל את תוצאות החיפוש לאתר מסוים, למשל /site:wikipedia.com",
     "ru": "Ограничить результаты поиска определенным сайтом, например, /site:wikipedia.com",
     "bg": "Ограничи резултати от търсенето до определени сайтове, например /site:wikipedia.com",
-    "vi": "Giới hạn kết quả tìm kiếm ở 1 trang web cố định, ví dụ: /site:wikipedia.com"m
+    "vi": "Giới hạn kết quả tìm kiếm ở 1 trang web cố định, ví dụ: /site:wikipedia.com",
     "ua": "Обмежити результати пошуку певним сайтом, наприклад, /site:wikipedia.com"
   },
   "page_command_description": {
@@ -156,7 +156,7 @@
     "ru": "Поддержать проект",
     "pl": "Wesprzyj ten projekt",
     "bg": "Подкрепете този проект",
-    "vi": "Hỗ trợ dự án này"
+    "vi": "Hỗ trợ dự án này",
     "ua": "Підтримати проєкт"
   },
   "support_me": {
