@@ -1,39 +1,12 @@
-[link-chrome]: https://chrome.google.com/webstore/detail/chatgpt-advanced/lpfemeioodjbpieminkklglpmhlngfcn 'Chrome Web Store'
-[link-firefox]: https://addons.mozilla.org/en-US/firefox/addon/web-chatgpt/ 'Firefox Add-ons'
-[link-edge]: https://microsoftedge.microsoft.com/addons/detail/arxivutils/flahobhjikkpnpohomeckhdjjkkkkmoc/ 'Edge Add-ons'
+<h1>WebChatGPT-Clean</h1>
 
-<div align="center">
-<h1>WebChatGPT</h1>
+ 
+ This is the cleansed version of [WebChatGPT](https://github.com/interstellard/chatgpt-advanced). I forked the latest version, fixed the worst bugs and put it here. I'm still in the process of analyzing the code and seeing if anything else can be improved.  
+ This is my first foray with web browser extensions, so progress is slow. :)
 
-
-English &nbsp;&nbsp;|&nbsp;&nbsp; [Indonesia](README_IN.md)  
-  
-  
-[![Discord](https://img.shields.io/discord/1060110102188797992?color=green&label=Join%20server&logo=discord)](https://discord.gg/nmCjvyVpnB) [![Twitter Follow](https://img.shields.io/twitter/follow/hahahahohohe?label=follow%20me&style=social)](https://twitter.com/hahahahohohe)
-
-
-This browser extension `adds web access` capability to [ChatGPT](https://chat.openai.com/). Get much more relevant and up-to-date answers from the chatbot!
+This browser extension adds web access capability to [ChatGPT](https://chat.openai.com/). Get much more relevant and up-to-date answers from the chatbot!
 
 ![image](https://user-images.githubusercontent.com/3750161/214144292-4fb34667-015a-43f3-906d-1d2d065d67f0.png)
-
-
-<br>
-
-[<img src="https://user-images.githubusercontent.com/3750161/214147732-c75e96a4-48a4-4b64-b407-c2402e899a75.PNG" height="67" alt="Chrome" valign="middle">][link-chrome] [<img src="https://user-images.githubusercontent.com/3750161/214148610-acdef778-753e-470e-8765-6cc97bca85ed.png" height="67" alt="Firefox" valign="middle">][link-firefox] [<img src="https://user-images.githubusercontent.com/3750161/233201810-d1026855-0482-44c8-b1ec-c7247134473e.png" height="67" alt="Chrome" valign="middle">][link-edge]
-
-
-[<img valign="middle" src="https://img.shields.io/chrome-web-store/v/lpfemeioodjbpieminkklglpmhlngfcn.svg">][link-chrome] [<img valign="middle" alt="Chrome Web Store" src="https://img.shields.io/chrome-web-store/users/lpfemeioodjbpieminkklglpmhlngfcn?color=blue">][link-chrome]
-<br>
-[<img valign="middle" src="https://img.shields.io/amo/v/web-chatgpt">][link-firefox]
-[<img valign="middle" alt="Mozilla Add-on" src="https://img.shields.io/amo/users/web-chatgpt">][link-firefox]
-<br>
-[<img valign="middle" src="https://img.shields.io/badge/dynamic/json?label=edge%20add-on&prefix=v&query=%24.version&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fflahobhjikkpnpohomeckhdjjkkkkmoc">][link-edge]
-[<img valign="middle" alt="Edge Add-on" src="https://img.shields.io/badge/dynamic/json?label=users&query=%24.activeInstallCount&url=https%3A%2F%2Fmicrosoftedge.microsoft.com%2Faddons%2Fgetproductdetailsbycrxid%2Fflahobhjikkpnpohomeckhdjjkkkkmoc">][link-edge]
-</div>
-<br>
-
-https://user-images.githubusercontent.com/3750161/214155508-5c1ad4d8-b565-4fe0-9ce7-e68aed11e73d.mp4
-
 
 ## Manual installation
 
@@ -63,7 +36,6 @@ https://user-images.githubusercontent.com/3750161/214155508-5c1ad4d8-b565-4fe0-9
   6. The addon will be installed and will appear in the list of installed addons on the Add-ons page.
   7. Go to [ChatGPT](https://chat.openai.com/chat/) and enjoy!
 
-
 ## Build from source
 
 1. `git clone https://github.com/qunash/chatgpt-advanced.git`
@@ -83,18 +55,3 @@ Some other ChatGPT extensions are known to interfere with WebChatGPT. If you are
 
 ### Do you collect any data?
 No, the extension does not collect any user data or analytics.
-
-<br>
-
-## Contributing
-
-Contributions are welcome! Please submit pull requests to the `dev` branch.
-
-<br><br><br>
-
-
-Like this free project? Please consider [supporting me](https://www.buymeacoffee.com/anzorq) to keep it running.
-
-[<a href="https://www.buymeacoffee.com/anzorq" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="45px" width="162px" alt="Buy Me A Coffee"></a>](https://www.buymeacoffee.com/anzorq)
-
-[![visitors](https://visitor-badge.glitch.me/badge?page_id=qunash/chatgpt-advanced)](https://visitor-badge.glitch.me) [![Discord](https://img.shields.io/discord/1060110102188797992?color=green&label=Join%20server&logo=discord)](https://discord.gg/nmCjvyVpnB) [![Twitter Follow](https://img.shields.io/twitter/follow/hahahahohohe?label=follow%20me&style=social)](https://twitter.com/hahahahohohe)
