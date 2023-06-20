@@ -47,9 +47,7 @@ const NavBar = (
 
             </TooltipWrapper>
             <div className="wcg-divider" />
-            <IconButton url="https://twitter.com/hahahahohohe" tip={getTranslation(localizationKeys.socialButtonTips.twitter)} icon={icons.twitter} />
-            <IconButton url="https://github.com/qunash/chatgpt-advanced" tip={getTranslation(localizationKeys.socialButtonTips.github)} icon={icons.github} />
-            <IconButton url="https://discord.gg/hjvAtVNtHa" tip={getTranslation(localizationKeys.socialButtonTips.discord)} icon={icons.discord} />
+            <IconButton url="https://github.com/BlackDragonBE/WebChatGPT-Clean" tip={getTranslation(localizationKeys.socialButtonTips.github)} icon={icons.github} />
         </div>
     </div>)
 }
